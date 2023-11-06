@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>v.je server is running</title>
+		<title>localhubc.com server is running</title>
 		<link href='https://fonts.googleapis.com/css?family=Oxygen:400,300' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="vje.css"/>
 	</head>
@@ -9,9 +9,15 @@
 
 	<main>
 		<article>
-		<section>
+        <section>
+        <div>
+		<h2> This original containerized web server was developed by Dr. Tom Butler. </h2>
+        <p>You can check his awesome work on his repository</p>
+		</div>
+        </section>
+	    <section>
 		<div>
-		<h2>v.je server is running</h2>
+		<h2>localhubc.com server is running</h2>
 
 		<p>If you are seeing this page, you can now write files to the <code>websites/default/public</code> directory and they will be accessible.</p>
 		</div>
@@ -54,8 +60,8 @@ $_SERVER['HTTP_HOST']; ?>/test.html">https://<?= $_SERVER['HTTP_HOST'];
 <h2>Features</h2>
 <ol>
     <li>All hosted websites use HTTPS with a <strong>valid SSL certificate</strong> from Let's Encrypt</li>
-    <li>No configuration needed. Run <code class="inline">docker-compose up</code> and your website is hosted on <a href="https://v.je">https://v.je/</a></li>
-    <li>Without configuration host different websites on v.je subdomains e.g. <a href="https://subdomain1.v.je">https://subdomain1.v.je/</a> and  <a href="https://subdomain2.v.je">https://subdomain2.v.je/</a></li>
+    <li>No configuration needed. Run <code class="inline">docker-compose up</code> and your website is hosted on <a href="https://localhubc.com">https://localhubc.com/</a></li>
+    <li>Without configuration host different websites on localhubc.com subdomains e.g. <a href="https://subdomain1.localhubc.com">https://subdomain1.localhubc.com/</a> and  <a href="https://subdomain2.localhubc.com">https://subdomain2.localhubc.com/</a></li>
     <li>Includes up to date PHP development software*:
         <ul>
             <li>PHP</li>
@@ -77,17 +83,17 @@ $_SERVER['HTTP_HOST']; ?>/test.html">https://<?= $_SERVER['HTTP_HOST'];
     <p>Connect to MySQL from your desktop using:</p>
 
     <ul>
-        <li>Host: <strong>v.je</strong></li>
+        <li>Host: <strong>localhubc</strong></li>
         <li>Port: <strong>3306</strong></li>
-        <li>Username: <strong>v.je</strong></li>
-        <li>Password: <strong>v.je</strong></li>
+        <li>Username: <strong>localhubc</strong></li>
+        <li>Password: <strong>localhubc</strong></li>
     </ul>
     
     <p>To connect to the server from PHP you must use <strong>mysql</strong> as the host. For example: </p>
     
     <code>
 &lt;?php
-$pdo = new PDO('mysql:dbname=test;host=mysql', 'v.je', 'v.je');
+$pdo = new PDO('mysql:dbname=test;host=mysql', 'localhubc', 'localhubc');
 </code>
 
     <p>This MySQL user has full access to create schemas and other users. I suggest using MySQL Workbench but you can install the clunky PHPMyAdmin tool if you want a worse experience.</p>
@@ -104,15 +110,15 @@ $pdo = new PDO('mysql:dbname=test;host=mysql', 'v.je', 'v.je');
 <section>
     <h2>Hosting multiple websites</h2>
 
-    <p>The environment is configured to host multiple websites from different folders within the created <code class="inline">websites</code> directory. To create a new website which is available on <a href="https://mysite.v.je">https://mysite.v.je/</a>:</p>
+    <p>The environment is configured to host multiple websites from different folders within the created <code class="inline">websites</code> directory. To create a new website which is available on <a href="https://mysite.localhubc.com">https://mysite.localhubc.com/</a>:</p>
 
     <ol>
         <li>Create the directory <code class="inline">mysite</code> inside the <code class="inline">websites</code> directory.</li>
         <li>Create the directory <code class="inline">public</code> inside the <code class="inline">mysite</code> directory.</li>
-        <li>Place your web-accessible files inside the <code class="inline">websites/mysite/public</code> directory. For example, the file in <code class="inline">websites/mysite/public/phpinfo.php</code> will be accessible on the URL <a href="https://mysite.v.je">https://mysite.v.je/phpinfo.php</a></li>
+        <li>Place your web-accessible files inside the <code class="inline">websites/mysite/public</code> directory. For example, the file in <code class="inline">websites/mysite/public/phpinfo.php</code> will be accessible on the URL <a href="https://mysite.localhubc.com">https://mysite.localhubc.com/phpinfo.php</a></li>
     </ol>
 
-    <p>Any directory you create inside the <code class="inline">websites</code> directory is treated as a subdomain of <code class="inline">v.je</code></p>
+    <p>Any directory you create inside the <code class="inline">websites</code> directory is treated as a subdomain of <code class="inline">localhubc.com</code></p>
 </section>
 
 <section id="import">
