@@ -1,0 +1,50 @@
+version: '3.8'
+services:
+    web:
+        image: nginx:latest
+        ports:
+            - "80:80"
+        volumes:
+            - ./nginx.conf:/etc/nginx/conf.d/nginx.conf
+            - ./websites:/websites
+    php:
+        build:
+            context: .
+            dockerfile: PHP.Dockerfile
+        volumes:
+            - ./websites:/websites
+    mysql:
+        image: mariadb:latest
+        environment:
+            MYSQL_ROOT_PASSWORD: 'localhubc'
+            MYSQL_USER: 'localhubc'
+            MYSQL_PASSWORD: 'localhubc'
+        volumes:
+            - mysqldata:/var/lib/mysql
+        ports:
+            - 3306:3306
+    phpunit:
+        build:
+            context: .
+            dockerfile: PHP.Dockerfile
+        working_dir: /websites/default
+        entrypoint: 'vendor/bin/phpunit'
+        volumes:
+            - ./websites:/websites
+        profiles:
+            - phpunit
+    composer:
+        build:
+            context: .
+            dockerfile: PHP.Dockerfile
+        working_dir: /websites/default
+        entrypoint: /usr/bin/composer
+        volumes:
+            - ./websites:/websites
+        profiles:
+            - composer
+    maildev:
+        image: maildev/maildev:latest
+
+volumes:
+    mysqldata: {}
