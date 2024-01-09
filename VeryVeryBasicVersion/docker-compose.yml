@@ -13,6 +13,9 @@ services:
             dockerfile: PHP.Dockerfile
         volumes:
             - ./websites:/websites
+            - ./php.ini:/usr/local/etc/php/php.ini
+        extra_hosts:
+            - host.docker.internal:host-gateway
     mysql:
         image: mariadb:latest
         environment:
