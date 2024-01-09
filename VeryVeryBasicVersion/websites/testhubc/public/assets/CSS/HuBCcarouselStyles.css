@@ -1,0 +1,36 @@
+.full-img {
+  display: inline-block;
+  width: 70%;
+}
+
+.displayed-img {
+  display: inline-block;
+  width: 70%;
+}
+
+.displayedBig-img {
+  display: inline-block;
+  width: 90%;
+  cursor: pointer;
+}
+
+.caption {
+  font-size:1vw;
+  text-align: center;
+}
+
+.thumb-bar figure {
+  display: inline-block;
+  vertical-align: bottom;
+  width: 10%;
+}
+
+.thumb-bar img {
+  width: 100%;
+  cursor: pointer;
+}
+
+
+
+
+
